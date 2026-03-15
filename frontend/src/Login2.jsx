@@ -46,7 +46,7 @@ function Login2() {
         setError(data.message || (isSignUp ? 'Registration failed' : 'Login failed'));
       }
     } catch {
-      setError('Cannot reach server. Is it running on port 4000?');
+      setError('Network error: ' + err.message);
     } finally {
       setIsLoading(false);
     }
