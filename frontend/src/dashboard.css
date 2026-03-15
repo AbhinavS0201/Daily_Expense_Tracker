@@ -1,0 +1,132 @@
+/* dashboard.css — extends App.css */
+
+/* Budget progress bar */
+.budget-progress-bar {
+  margin-top: 8px;
+  height: 4px;
+  background: var(--bg-elevated);
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.budget-progress-fill {
+  height: 100%;
+  border-radius: 99px;
+  background: var(--accent);
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.budget-progress-fill.warning { background: #f59e0b; }
+.budget-progress-fill.danger  { background: var(--expense-color); }
+
+/* Transaction list left border accent */
+.transaction-item.income  { border-left: 2px solid transparent; }
+.transaction-item.expense { border-left: 2px solid transparent; }
+
+.transaction-item.income:hover  { border-left-color: var(--income-color); }
+.transaction-item.expense:hover { border-left-color: var(--expense-color); }
+
+/* Delete button on transaction */
+.txn-delete {
+  opacity: 0;
+  background: none;
+  border: none;
+  color: var(--expense-color);
+  cursor: pointer;
+  padding: 4px 6px;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  transition: var(--transition);
+}
+
+.transaction-item:hover .txn-delete {
+  opacity: 1;
+}
+
+.txn-delete:hover {
+  background: var(--expense-dim);
+}
+
+/* Header right section */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-user {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.header-avatar {
+  width: 30px;
+  height: 30px;
+  background: var(--accent-subtle);
+  border: 1px solid var(--border-accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.header-username {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+/* Empty state illustration */
+.empty-state {
+  text-align: center;
+  padding: 48px 24px;
+}
+
+.empty-state-icon {
+  font-size: 40px;
+  margin-bottom: 14px;
+  opacity: 0.4;
+  display: block;
+}
+
+.empty-state h4 {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+}
+
+.empty-state p {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* Section header */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.section-badge {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 99px;
+  padding: 3px 10px;
+  letter-spacing: 0.5px;
+}
+
+/* Stagger card animations */
+.summary-card:nth-child(1) { animation-delay: 0s; }
+.summary-card:nth-child(2) { animation-delay: 0.07s; }
+.summary-card:nth-child(3) { animation-delay: 0.14s; }
+.summary-card:nth-child(4) { animation-delay: 0.21s; }
