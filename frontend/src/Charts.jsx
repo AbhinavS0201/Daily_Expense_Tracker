@@ -65,8 +65,8 @@ function Charts() {
 
       // Load summary (totals + category breakdown + monthly trend)
       const [summaryRes, txnRes] = await Promise.all([
-        fetch(`http://localhost:4000/summary/${userData.id}`, { headers: authHeaders() }),
-        fetch(`http://localhost:4000/transactions/${userData.id}`, { headers: authHeaders() }),
+        fetch(`https://dailyexpensetracker-production.up.railway.app/summary/${userData.id}`, { headers: authHeaders() }),
+        fetch(`https://dailyexpensetracker-production.up.railway.app/transactions/${userData.id}`, { headers: authHeaders() }),
       ]);
 
       if (summaryRes.status === 401 || txnRes.status === 401) {

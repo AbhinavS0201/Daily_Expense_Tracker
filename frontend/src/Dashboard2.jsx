@@ -26,7 +26,7 @@ function Dashboard2() {
   // ─── LOAD TRANSACTIONS ─────────────────────────────────────────────────
   const handleLoadTransactions = useCallback(async (userId, dateFilter) => {
     try {
-      let url = `http://localhost:4000/transactions/${userId}`;
+      let url = `https://dailyexpensetracker-production.up.railway.app/transactions/${userId}`;
       if (dateFilter) url += `?date=${dateFilter}`;
 
       const response = await fetch(url, { headers: authHeaders() });
@@ -75,7 +75,7 @@ function Dashboard2() {
     }
 
     try {
-      const response = await fetch('http://localhost:4000/add-transaction', {
+      const response = await fetch('https://dailyexpensetracker-production.up.railway.app/add-transaction', {
         method:  'POST',
         headers: authHeaders(),
         body: JSON.stringify({
@@ -106,7 +106,7 @@ function Dashboard2() {
   const handleDelete = async (id) => {
     if (!window.confirm('Delete this transaction?')) return;
     try {
-      const response = await fetch(`http://localhost:4000/transaction/${id}`, {
+      const response = await fetch(`https://dailyexpensetracker-production.up.railway.app/transaction/${id}`, {
         method:  'DELETE',
         headers: authHeaders(),
       });
@@ -123,7 +123,7 @@ function Dashboard2() {
     const val = Number(budget);
     if (!val || val <= 0) { alert('Enter a valid budget'); return; }
     try {
-      const response = await fetch('http://localhost:4000/budget', {
+      const response = await fetch('https://dailyexpensetracker-production.up.railway.app/budget', {
         method:  'PUT',
         headers: authHeaders(),
         body: JSON.stringify({ monthly_budget: val }),
