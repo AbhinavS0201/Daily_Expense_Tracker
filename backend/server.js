@@ -13,7 +13,7 @@ const JWT_SECRET = process.env.JWT_SECRET || 'expense_tracker_secret_2024';
 app.use(cors({ 
   origin: [
     'http://localhost:3000',
-    'https://your-vercel-url.vercel.app'
+    'https://daily-expense-tracker-4weuj40wt-abhinavs0201s-projects.vercel.app'
   ], 
   credentials: true 
 }));
