@@ -10,7 +10,13 @@ const app  = express();
 const PORT = process.env.PORT || 4000;
 const JWT_SECRET = process.env.JWT_SECRET || 'expense_tracker_secret_2024';
 
-app.use(cors({ origin: 'http://localhost:3000', credentials: true }));
+app.use(cors({ 
+  origin: [
+    'http://localhost:3000',
+    'https://your-vercel-url.vercel.app'
+  ], 
+  credentials: true 
+}));
 app.use(express.json());
 
 // ─── DB POOL ────────────────────────────────────────────────────────────────
