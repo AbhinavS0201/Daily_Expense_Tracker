@@ -8,9 +8,7 @@ Built with a modern client-server architecture using React, Node.js, Express, My
 
 ## 🌐 Live Demo
 
-**Frontend:** [Add Vercel URL]
-
-**Backend API:** [Add Render URL]
+**Frontend:** https://daily-expense-tracker-beta.vercel.app/
 
 ---
 
